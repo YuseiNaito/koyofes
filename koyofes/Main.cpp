@@ -86,13 +86,15 @@ void Main() {
 				if (cam_texture) {
 					cam_texture.resize(Window::Width(), Window::Height()).draw();
 				}
+			} else {
+				Rect(0, 0, Window::Width(), Window::Height()).draw(Color(0, 0, 0));
 			}
 
 			// UI描画
 			{
 				ui1_texture.resize(Window::Width(), Window::Height()).draw();
-				ui2_texture.rotate(ui_rad[0]).draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
-				// ui2_texture.rotate(-ui_rad[0]).draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
+				// ui2_texture.draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
+				ui2_texture.rotate(-ui_rad[0]).draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
 				ui3_texture.rotate(ui_rad[1]).draw((Window::Width() - ui3.width) / 2, (Window::Height() - ui3.height) / 2);
 				ui4_texture.rotate(-ui_rad[1]).draw((Window::Width() - ui4.width) / 2, (Window::Height() - ui4.height) / 2);
 				ui_rad[0] = ui_rad[0] < TwoPi ? ui_rad[0] + Radians(0.5) : 0;
