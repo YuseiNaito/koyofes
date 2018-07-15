@@ -11,14 +11,25 @@ void Main() {
 	Window::SetStyle(WindowStyle::Sizeable);
 
 	// MovieSetting
-	bool play_flag = experimental::MediaPlayer::Open(L"Movie/movie.mp4");
+	bool play_flag = false; // experimental::MediaPlayer::Open(L"Movie/movie.mp4");
 	bool is_playing = false;
 
 	// ImageSetting
 	const Image logo(L"Image/logo.png");
+	const Image ui1(L"Image/UI1.png");
+	const Image ui2(L"Image/UI2.png");
+	const Image ui3(L"Image/UI3.png");
+	const Image ui4(L"Image/UI4.png");
+
 	const Texture logo_texture(logo);
+	const Texture ui1_texture(ui1);
+	const Texture ui2_texture(ui2);
+	const Texture ui3_texture(ui3);
+	const Texture ui4_texture(ui4);
+
+	double ui_rad[2] = {0};
 	Webcam webcam;
-	bool cam_flag = webcam.open(0, Size(640, 480)) && webcam.start();
+	bool cam_flag = webcam.open(1, Size(640, 480)) && webcam.start();
 	DynamicTexture cam_texture;
 
 	/*
@@ -54,7 +65,7 @@ void Main() {
 						experimental::MediaPlayer::Play();
 					}
 				} else {
-					logo_texture.draw();
+					logo_texture.resize(Window::Width(), Window::Height()).draw();
 				}
 			} else {
 				is_playing = false;
@@ -75,6 +86,17 @@ void Main() {
 				if (cam_texture) {
 					cam_texture.resize(Window::Width(), Window::Height()).draw();
 				}
+			}
+
+			// UI描画
+			{
+				ui1_texture.resize(Window::Width(), Window::Height()).draw();
+				ui2_texture.rotate(ui_rad[0]).draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
+				// ui2_texture.rotate(-ui_rad[0]).draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
+				ui3_texture.rotate(ui_rad[1]).draw((Window::Width() - ui3.width) / 2, (Window::Height() - ui3.height) / 2);
+				ui4_texture.rotate(-ui_rad[1]).draw((Window::Width() - ui4.width) / 2, (Window::Height() - ui4.height) / 2);
+				ui_rad[0] = ui_rad[0] < TwoPi ? ui_rad[0] + Radians(0.5) : 0;
+				ui_rad[1] = ui_rad[1] < TwoPi ? ui_rad[1] + Radians(0.25) : 0;
 			}
 		}
 	}
