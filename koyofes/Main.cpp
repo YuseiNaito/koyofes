@@ -20,14 +20,17 @@ void Main() {
 	const Image ui2(L"Image/UI2.png");
 	const Image ui3(L"Image/UI3.png");
 	const Image ui4(L"Image/UI4.png");
+	const Image ui5(L"Image/UI5.png");
 
 	const Texture logo_texture(logo);
 	const Texture ui1_texture(ui1);
 	const Texture ui2_texture(ui2);
 	const Texture ui3_texture(ui3);
 	const Texture ui4_texture(ui4);
+	const Texture ui5_texture(ui5);
 
-	double ui_rad[2] = {0};
+	double ui_rad[3] = {0};
+	auto ui_rad1sign = 1;
 	Webcam webcam;
 	bool cam_flag = webcam.open(1, Size(640, 480)) && webcam.start();
 	DynamicTexture cam_texture;
@@ -90,15 +93,18 @@ void Main() {
 				Rect(0, 0, Window::Width(), Window::Height()).draw(Color(0, 0, 0));
 			}
 
-			// UI描画
+			// HUD描画
 			{
 				ui1_texture.resize(Window::Width(), Window::Height()).draw();
-				// ui2_texture.draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
-				ui2_texture.rotate(-ui_rad[0]).draw((Window::Width() - ui2.width) / 2, (Window::Height() - ui2.height) / 2);
-				ui3_texture.rotate(ui_rad[1]).draw((Window::Width() - ui3.width) / 2, (Window::Height() - ui3.height) / 2);
-				ui4_texture.rotate(-ui_rad[1]).draw((Window::Width() - ui4.width) / 2, (Window::Height() - ui4.height) / 2);
+				ui2_texture.resize(Window::Width() * ui2.width / ui1_texture.width, Window::Height() * ui2.height / ui1_texture.height).rotate(-ui_rad[0]).draw((Window::Width() - Window::Width() * ui2.width / ui1_texture.width) / 2, (Window::Height() - Window::Height() * ui2.height / ui1_texture.height) / 2);
+				ui3_texture.resize(Window::Width() * ui3.width / ui1_texture.width, Window::Height() * ui3.height / ui1_texture.height).rotate(ui_rad[0]).draw((Window::Width() - Window::Width() * ui3.width / ui1_texture.width) / 2, (Window::Height() - Window::Height() * ui3.height / ui1_texture.height) / 2);
+				ui4_texture.resize(Window::Width() * ui4.width / ui1_texture.width, Window::Height() * ui4.height / ui1_texture.height).rotate(ui_rad[1]).draw((Window::Width() - Window::Width() * ui4.width / ui1_texture.width) / 2, (Window::Height() - Window::Height() * ui4.height / ui1_texture.height) / 2);
+				ui4_texture.resize(Window::Width() * ui4.width / ui1_texture.width, Window::Height() * ui4.height / ui1_texture.height).rotate(-ui_rad[1]).draw((Window::Width() - Window::Width() * ui4.width / ui1_texture.width) / 2, (Window::Height() - Window::Height() * ui4.height / ui1_texture.height) / 2);
+				ui5_texture.resize(Window::Width() * ui5.width / ui1_texture.width, Window::Height() * ui5.height / ui1_texture.height).rotate(ui_rad[2]).draw((Window::Width() - Window::Width() * ui5.width / ui1_texture.width) / 2, (Window::Height() - Window::Height() * ui5.height / ui1_texture.height) / 2);
 				ui_rad[0] = ui_rad[0] < TwoPi ? ui_rad[0] + Radians(0.5) : 0;
-				ui_rad[1] = ui_rad[1] < TwoPi ? ui_rad[1] + Radians(0.25) : 0;
+				ui_rad[1] = ui_rad[1] < TwoPi ? ui_rad[1] + ui_rad1sign * Radians(0.25) : 0;
+				ui_rad[2] = ui_rad[2] < TwoPi ? ui_rad[2] + Radians(0.1) : 0;
+				// if ((ui_rad1sign == 1 && ui_rad[1] > HalfPi + QuarterPi / 4.0) || (ui_rad1sign == -1 && ui_rad[1] < HalfPi - QuarterPi / 4.0)) ui_rad1sign *= -1;
 			}
 		}
 	}
