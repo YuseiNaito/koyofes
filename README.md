@@ -1,8 +1,9 @@
 # koyofes
 powerd by [Siv3D](https://play-siv3d.hateblo.jp)
 
-カメラ映像の上にテクスチャ被せて回したりしてそれっぽいHUD感を出します
+カメラ映像の上にテクスチャ被せて回したりしてそれっぽいHUD感を出します.
 
+デフォルトで入っている画像は下のようにMicrosoft PowerPointで作ってあります.
 <img src="https://imgur.com/Fa1q2JO.jpg" alt="デフォルト" title="サンプル1">
 
 デフォルトではこんな感じ
