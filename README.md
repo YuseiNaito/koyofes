@@ -3,11 +3,11 @@ powerd by [Siv3D](https://play-siv3d.hateblo.jp)
 
 カメラ映像の上にテクスチャ被せて回したりしてそれっぽいHUD感を出します
 
-![デフォルトHUD](https://imgur.com/Fa1q2JO)
+<img src="https://imgur.com/Fa1q2JO.jpg" alt="デフォルト" title="サンプル1">
 
 デフォルトではこんな感じ
 
-![改造例](https://imgur.com/U4TT42s)
+<img src="https://imgur.com/U4TT42s.jpg" alt="改造例" title="サンプル2">
 
 こんな感じで色とか変えてみたり
 
