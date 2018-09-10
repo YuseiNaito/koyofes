@@ -1,6 +1,16 @@
 # koyofes
 powerd by [Siv3D](https://play-siv3d.hateblo.jp)
 
+カメラ映像の上にテクスチャ被せて回したりしてそれっぽいHUD感を出します
+
+![デフォルトHUD](https://imgur.com/Fa1q2JO)
+
+デフォルトではこんな感じ
+
+![改造例](https://imgur.com/U4TT42s)
+
+こんな感じで色とか変えてみたり
+
 用意する機器
  * Siv3D必要環境を満たしたPC
  * Webカメラ、またはWebカメラとして使用する端末
