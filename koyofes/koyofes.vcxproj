@@ -171,6 +171,18 @@
   <ItemGroup>
     <Image Include="Engine\Splash.png" />
     <Image Include="Icon.ico" />
+    <Image Include="Image\logo.png" />
+    <Image Include="Image\UI1-1.png" />
+    <Image Include="Image\UI1-2.png" />
+    <Image Include="Image\UI1-3.png" />
+    <Image Include="Image\UI1-5.png" />
+    <Image Include="Image\UI1-6.png" />
+    <Image Include="Image\UI1-7.png" />
+    <Image Include="Image\UI1-8.png" />
+    <Image Include="Image\UI2.png" />
+    <Image Include="Image\UI3.png" />
+    <Image Include="Image\UI4.png" />
+    <Image Include="Image\UI5.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Assets\engine_textures.s3a" />

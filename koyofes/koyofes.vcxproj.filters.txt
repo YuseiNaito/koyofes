@@ -67,6 +67,12 @@
     <Filter Include="リソース ファイル\Engine\dll%28x86%29\TobiiEyeX">
       <UniqueIdentifier>{a079701e-3fb0-45fa-b67d-4de7e67d8a5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\Image">
+      <UniqueIdentifier>{58bece9d-6be4-4c4a-bf80-c9c8283abe7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\Movie">
+      <UniqueIdentifier>{018f143c-ce0e-444c-a1ae-70e5f4ac21e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -84,6 +90,42 @@
     </Image>
     <Image Include="Engine\Splash.png">
       <Filter>リソース ファイル\Engine</Filter>
+    </Image>
+    <Image Include="Image\UI2.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI3.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI4.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI5.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\logo.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-1.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-2.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-3.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-5.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-6.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-7.png">
+      <Filter>リソース ファイル\Image</Filter>
+    </Image>
+    <Image Include="Image\UI1-8.png">
+      <Filter>リソース ファイル\Image</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
